@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta  charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome</title>
+<style>
+input[type="text"], input[type="tel"] { margin-bottom: 10px;
+padding: 5px; width: 200px;
+}
+input[type="submit"],[type="reset"] { padding: 5px 10px;
+background-color: blue; color: white;
+border: none; cursor: pointer;
+}
+</style>
+</head>
+<body>
+<form id="userForm">
+<label for="firstName">First Name:</label>
+<input type="text" id="firstName" name="firstName"><br><br>
+
+<label for="lastName">Last Name:</label>
+<input type="text" id="lastName" name="lastName"><br><br>
+
+<input type="submit" value="Submit">
+</form>
+<script> document.getElementById("userForm").addEventListener("submit",function(event){
+event.preventDefault();
+
+var firstName = document.getElementById("firstName").value.trim(); var lastName = document.getElementById("lastName").value.trim(); if (firstName === "" || lastName === ""){
+alert("Please enter both First Name and Last Name.");
+}
+else{
+alert("Welcome " + firstName + " " + lastName + "!!!!");
+}
+});
+</script>
+</body>
+</html>
